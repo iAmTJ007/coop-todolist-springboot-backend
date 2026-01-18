@@ -1,0 +1,27 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: false   # we define routes manually
+      routes:
+        - id: auth-service
+          uri: lb://auth-service
+          predicates:
+            - Path=/auth/**
+
+        - id: todo-service
+          uri: lb://todo-service
+          predicates:
+            - Path=/todos/**
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
