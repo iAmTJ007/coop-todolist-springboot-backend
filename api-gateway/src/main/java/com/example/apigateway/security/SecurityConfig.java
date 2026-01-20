@@ -1,32 +1,56 @@
 package com.example.apigateway.security;
-
-
-import org.springframework.context.annotation.*;
+import io.jsonwebtoken.security.Keys;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.oauth2.jwt.JwtDecoder;
+import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
 import org.springframework.security.web.SecurityFilterChain;
 
+import javax.crypto.SecretKey;
+import java.nio.charset.StandardCharsets;
+
 @Configuration
+@EnableWebSecurity
 public class SecurityConfig {
+
+    private static final String SECRET =
+            "my-super-secret-key-my-super-secret-key-123456"; // 256-bit
+
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
-        //first disable the csrf because in jwt enabled apps, csrf is not needed
-        //csrf is when we login some app and then we go to some fishy website then an attacker
-        //sends a fake request from our side that is csrf
-        //CSRF is when a website tricks your browser into doing something on another website without your permission.
-        http.csrf(csrf->csrf.disable())
-                .sessionManagement(session->
-                        session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                //authorization rules
-                .authorizeHttpRequests(auth->
-                        auth.requestMatchers("/auth/**").permitAll()
-                                .anyRequest().authenticated())
-                //jwt validation
-                .oauth2ResourceServer(oath2->oath2.jwt(jwt->{}));
+    JwtDecoder jwtDecoder() {
+        SecretKey key = Keys.hmacShaKeyFor(SECRET.getBytes(StandardCharsets.UTF_8));
+        return NimbusJwtDecoder.withSecretKey(key).build();
+    }
+
+
+    @Bean
+    SecurityFilterChain publicEndpoints(HttpSecurity http) throws Exception {
+        http
+                .securityMatcher("/auth/**","/error")
+                .csrf(csrf -> csrf.disable())
+                .authorizeHttpRequests(auth -> auth.anyRequest().permitAll())
+                .sessionManagement(session ->
+                        session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                );
+
         return http.build();
-        //first always jwt validation is done if it fails then it checks in authorization rules if its permitted
-        //if yes then forward the request to that service if not then 401 error, if it passes the jwt
-        //then it again goes to authrorization rules , it sees anyrequest.authenticated which returns true
-        //and then it forwards the request to that service.
+    }
+
+    @Bean
+    SecurityFilterChain protectedEndpoints(HttpSecurity http) throws Exception {
+        http
+                .securityMatcher("/**")
+                .csrf(csrf -> csrf.disable())
+                .authorizeHttpRequests(auth -> auth.anyRequest().authenticated())
+                .oauth2ResourceServer(oauth2 -> oauth2.jwt())
+                .sessionManagement(session ->
+                        session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                );
+
+        return http.build();
     }
 }
