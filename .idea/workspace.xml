@@ -4,16 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e412891-7976-4e17-8d0b-991fcf3de87d" name="Changes" comment="security policy in apigateway">
+    <list default="true" id="1e412891-7976-4e17-8d0b-991fcf3de87d" name="Changes" comment="AUTH WORKING">
+      <change afterPath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/controller/TodoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/dto/CreateTodoRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/dto/UpdateStatusRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/dto/UpdateTodoRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/entity/Priority.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/entity/Status.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/entity/Todo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/repository/TodoRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/service/TodoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/com/example/apigateway/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/com/example/apigateway/security/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/service/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/service/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/service/JwtService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/todo-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/todo-service/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,31 +71,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "Spring Boot.AuthServiceApplication.executor": "Run",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/91889/Desktop/projects/coop-todolist/coop-todolist-backend",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ApiGatewayApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.AuthServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.TodoServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/91889/Desktop/projects/coop-todolist/coop-todolist-backend&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\91889\Desktop\projects\coop-todolist\coop-todolist-backend\todo-service\src\main\java\com\example\todoservice\entity" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -103,7 +117,9 @@
         <entry key="SpringBootApplicationConfigurationType">
           <value>
             <map>
+              <entry key="ApiGatewayApplication" value="STOPPED" />
               <entry key="AuthServiceApplication" value="STOPPED" />
+              <entry key="TodoServiceApplication" value="FAILED" />
             </map>
           </value>
         </entry>
@@ -137,7 +153,6 @@
     <attachedChunks>
       <set>
         <option value="bundled-jdk-30f59d01ecdd-26cb7f24e5b0-intellij.indexing.shared.core-IU-253.29346.138" />
-        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.29346.138" />
       </set>
     </attachedChunks>
   </component>
@@ -156,7 +171,8 @@
       <workItem from="1768735901146" duration="53000" />
       <workItem from="1768736152565" duration="20026000" />
       <workItem from="1768774255443" duration="924000" />
-      <workItem from="1768912576981" duration="14604000" />
+      <workItem from="1768912576981" duration="14857000" />
+      <workItem from="1769097044111" duration="8000" />
     </task>
     <task id="LOCAL-00001" summary="structure">
       <option name="closed" value="true" />
@@ -206,7 +222,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768918138385</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="AUTH WORKING">
+      <option name="closed" value="true" />
+      <created>1768930465115</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1768930465115</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,6 +246,7 @@
     <MESSAGE value="added eureka" />
     <MESSAGE value="authlogic defined , security configuration left" />
     <MESSAGE value="security policy in apigateway" />
-    <option name="LAST_COMMIT_MESSAGE" value="security policy in apigateway" />
+    <MESSAGE value="AUTH WORKING" />
+    <option name="LAST_COMMIT_MESSAGE" value="AUTH WORKING" />
   </component>
 </project>

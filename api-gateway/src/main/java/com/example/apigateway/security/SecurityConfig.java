@@ -43,7 +43,7 @@ public class SecurityConfig {
     @Bean
     SecurityFilterChain protectedEndpoints(HttpSecurity http) throws Exception {
         http
-                .securityMatcher("/**")
+                .securityMatcher("/todo/**")
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth.anyRequest().authenticated())
                 .oauth2ResourceServer(oauth2 -> oauth2.jwt())
