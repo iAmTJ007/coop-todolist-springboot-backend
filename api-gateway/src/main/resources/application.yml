@@ -18,7 +18,7 @@ spring:
           - id: todo-service
             uri: lb://todo-service
             predicates:
-              - Path=/todos/**
+              - Path=/todo/**
 
 eureka:
   client:

@@ -4,24 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e412891-7976-4e17-8d0b-991fcf3de87d" name="Changes" comment="AUTH WORKING">
-      <change afterPath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/controller/TodoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/dto/CreateTodoRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/dto/UpdateStatusRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/dto/UpdateTodoRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/entity/Priority.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/entity/Status.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/entity/Todo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/repository/TodoRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/service/TodoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/com/example/apigateway/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/com/example/apigateway/security/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/example/authservice/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/todo-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/todo-service/src/main/resources/application.yml" afterDir="false" />
-    </list>
+    <list default="true" id="1e412891-7976-4e17-8d0b-991fcf3de87d" name="Changes" comment="todoservice structure,create task control made" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,7 +44,7 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -119,7 +102,7 @@
             <map>
               <entry key="ApiGatewayApplication" value="STOPPED" />
               <entry key="AuthServiceApplication" value="STOPPED" />
-              <entry key="TodoServiceApplication" value="FAILED" />
+              <entry key="TodoServiceApplication" value="STOPPED" />
             </map>
           </value>
         </entry>
@@ -230,7 +213,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768930465115</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="todoservice structure,create task control made">
+      <option name="closed" value="true" />
+      <created>1769120993837</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1769120993837</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -247,6 +238,7 @@
     <MESSAGE value="authlogic defined , security configuration left" />
     <MESSAGE value="security policy in apigateway" />
     <MESSAGE value="AUTH WORKING" />
-    <option name="LAST_COMMIT_MESSAGE" value="AUTH WORKING" />
+    <MESSAGE value="todoservice structure,create task control made" />
+    <option name="LAST_COMMIT_MESSAGE" value="todoservice structure,create task control made" />
   </component>
 </project>
