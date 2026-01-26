@@ -1,11 +1,15 @@
 package com.example.todoservice.controller;
 
 import com.example.todoservice.dto.CreateTodoRequest;
+import com.example.todoservice.dto.DeleteTodoRequest;
+import com.example.todoservice.dto.UpdateTodoRequest;
 import com.example.todoservice.entity.Todo;
 import com.example.todoservice.service.TodoService;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/todo")
@@ -15,6 +19,18 @@ public class TodoController {
         this.todoService=todoService;
     }
 
+    //get tasks for that user
+    @GetMapping("/getTask")
+    public List<Todo> getTasks(@AuthenticationPrincipal Jwt jwt){
+        return todoService.getTasks(jwt.getSubject());
+    }
+    //get task by task id
+    @GetMapping("/getTask/{taskId}")
+    public Todo getTaskById(@PathVariable Long taskId){
+        return todoService.getTaskByTaskId(taskId);
+    }
+
+
     //create task
     @PostMapping("/createTask")
     public Todo createTask(@RequestBody CreateTodoRequest createTodoRequest, @AuthenticationPrincipal Jwt jwt){
@@ -22,4 +38,28 @@ public class TodoController {
         String username=jwt.getSubject();
         return todoService.createTask(username,createTodoRequest);
     }
+    //delete task
+    @DeleteMapping("/deleteTask")
+    public String deleteTask(@RequestBody DeleteTodoRequest deleteTodoRequest){
+        return todoService.deleteTask(deleteTodoRequest.getTaskId());
+    }
+    //update task
+    @PutMapping("/updateTask/{taskId}")
+    public Todo updateTask(@RequestBody UpdateTodoRequest updateTodoRequest,@PathVariable Long taskId){
+        return todoService.updateTask(updateTodoRequest,taskId);
+    }
+
+
+
+
+
+
+
+
+
+    @GetMapping("/test")
+    public String test(){
+        return "working";
+    }
+
 }

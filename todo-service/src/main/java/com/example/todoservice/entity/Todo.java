@@ -1,9 +1,11 @@
 package com.example.todoservice.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.FutureOrPresent;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 @Entity
 @Data
@@ -17,7 +19,7 @@ public class Todo {
     private Long taskId;
     @Column(nullable = false)
     private String username; //we will get this from jwt
-    @Column(nullable = false,unique = true)
+    @Column(nullable = false)
     private String title;
     @Column(nullable = false)
     private String description;

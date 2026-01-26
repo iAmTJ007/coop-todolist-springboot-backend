@@ -8,6 +8,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
+import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
 import org.springframework.security.web.SecurityFilterChain;
 
 import javax.crypto.SecretKey;
@@ -26,8 +27,8 @@ public class SecurityConfig {
         return NimbusJwtDecoder.withSecretKey(key).build();
     }
 
-
     @Bean
+    @Order(1)
     SecurityFilterChain publicEndpoints(HttpSecurity http) throws Exception {
         http
                 .securityMatcher("/auth/**","/error")
@@ -41,6 +42,7 @@ public class SecurityConfig {
     }
 
     @Bean
+    @Order(2)
     SecurityFilterChain protectedEndpoints(HttpSecurity http) throws Exception {
         http
                 .securityMatcher("/todo/**")

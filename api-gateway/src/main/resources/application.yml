@@ -27,4 +27,5 @@ eureka:
 
 logging:
   level:
-    org.springframework.security.web.FilterChainProxy: TRACE
+    org.springframework.security: DEBUG
+

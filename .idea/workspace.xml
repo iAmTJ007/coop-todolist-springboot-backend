@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e412891-7976-4e17-8d0b-991fcf3de87d" name="Changes" comment="todoservice structure,create task control made" />
+    <list default="true" id="1e412891-7976-4e17-8d0b-991fcf3de87d" name="Changes" comment="changed todos to todo in gateway yml">
+      <change afterPath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/dto/DeleteTodoRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/com/example/apigateway/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/com/example/apigateway/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/todo-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/controller/TodoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/controller/TodoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/dto/UpdateTodoRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/dto/UpdateTodoRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/entity/Todo.java" beforeDir="false" afterPath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/entity/Todo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/repository/TodoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/repository/TodoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/service/TodoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/service/TodoService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -109,7 +121,7 @@
       </map>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.AuthServiceApplication">
+  <component name="RunManager" selected="Spring Boot.TodoServiceApplication">
     <configuration name="ApiGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="api-gateway" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.apigateway.ApiGatewayApplication" />
@@ -221,7 +233,15 @@
       <option name="project" value="LOCAL" />
       <updated>1769120993837</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="changed todos to todo in gateway yml">
+      <option name="closed" value="true" />
+      <created>1769121108680</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1769121108680</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,6 +259,7 @@
     <MESSAGE value="security policy in apigateway" />
     <MESSAGE value="AUTH WORKING" />
     <MESSAGE value="todoservice structure,create task control made" />
-    <option name="LAST_COMMIT_MESSAGE" value="todoservice structure,create task control made" />
+    <MESSAGE value="changed todos to todo in gateway yml" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed todos to todo in gateway yml" />
   </component>
 </project>
