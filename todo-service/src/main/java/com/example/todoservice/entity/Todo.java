@@ -6,6 +6,8 @@ import lombok.*;
 
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Data
@@ -17,8 +19,13 @@ public class Todo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long taskId;
-    @Column(nullable = false)
-    private String username; //we will get this from jwt
+    @ElementCollection
+    @CollectionTable(
+            name = "todo_users",
+            joinColumns = @JoinColumn(name = "taskId")
+    )
+    @Column(name = "username")
+    private Set<String> usernames; //we will get this from jwt
     @Column(nullable = false)
     private String title;
     @Column(nullable = false)

@@ -7,7 +7,9 @@ import com.example.todoservice.entity.Todo;
 import com.example.todoservice.repository.TodoRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Service
 public class TodoService {
@@ -25,8 +27,10 @@ public class TodoService {
 
 
     public Todo createTask(String username, CreateTodoRequest createTodoRequest){
+        Set<String> usernames=new HashSet<>();
+        usernames.add(username);
         Todo todo=Todo.builder()
-                .username(username)
+                .usernames(usernames)
                 .title(createTodoRequest.getTitle())
                 .description(createTodoRequest.getDescription())
                 .priority(createTodoRequest.getPriority())
