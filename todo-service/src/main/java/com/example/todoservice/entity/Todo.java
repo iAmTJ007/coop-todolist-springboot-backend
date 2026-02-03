@@ -19,6 +19,7 @@ public class Todo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long taskId;
+
     @ElementCollection
     @CollectionTable(
             name = "todo_users",
@@ -30,6 +31,7 @@ public class Todo {
     private String title;
     @Column(nullable = false)
     private String description;
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Status status; //pending,completed defined in enum
     @Column(nullable = false)

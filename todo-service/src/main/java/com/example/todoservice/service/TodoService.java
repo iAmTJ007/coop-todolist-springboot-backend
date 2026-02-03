@@ -19,7 +19,7 @@ public class TodoService {
     }
 
     public List<Todo> getTasks(String username){
-        return todoRepository.findTodosByUsername(username);
+        return todoRepository.findTodosByUsernamesContaining(username);
     }
     public Todo getTaskByTaskId(Long taskId){
         return todoRepository.findTodoByTaskId(taskId);

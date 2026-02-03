@@ -49,17 +49,4 @@ public class TodoController {
         return todoService.updateTask(updateTodoRequest,taskId);
     }
 
-
-
-
-
-
-
-
-
-    @GetMapping("/test")
-    public String test(){
-        return "working";
-    }
-
 }

@@ -20,6 +20,11 @@ spring:
             predicates:
               - Path=/todo/**
 
+          - id: todo-service-friends
+            uri: lb://todo-service
+            predicates:
+              - Path=/friends/**
+
 eureka:
   client:
     service-url:

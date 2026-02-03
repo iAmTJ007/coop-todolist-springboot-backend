@@ -45,7 +45,7 @@ public class SecurityConfig {
     @Order(2)
     SecurityFilterChain protectedEndpoints(HttpSecurity http) throws Exception {
         http
-                .securityMatcher("/todo/**")
+                .securityMatcher("/todo/**","/friends/**")
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth.anyRequest().authenticated())
                 .oauth2ResourceServer(oauth2 -> oauth2.jwt())

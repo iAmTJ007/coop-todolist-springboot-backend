@@ -9,6 +9,6 @@ public interface TodoRepository extends JpaRepository<Todo,Long> {
     //just by extending to jpa repository we get built in methods like save(todo),findById(tid),findAll(),
     //deleteById(tid), existsById(tid)
 
-    List<Todo> findTodosByUsername(String username);
+    List<Todo> findTodosByUsernamesContaining(String username);
     Todo findTodoByTaskId(Long taskId);
 }

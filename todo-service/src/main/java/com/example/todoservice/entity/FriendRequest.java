@@ -21,6 +21,7 @@ public class FriendRequest {
     private String sender;
     @Column(nullable = false)
     private String receiver;
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Fstatus fstatus;
 }

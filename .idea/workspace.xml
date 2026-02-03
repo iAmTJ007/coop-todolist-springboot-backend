@@ -4,14 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e412891-7976-4e17-8d0b-991fcf3de87d" name="Changes" comment="crud todo service working">
-      <change afterPath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/controller/FriendController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/entity/FriendRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/entity/Fstatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/repository/FriendRequestRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/service/FriendService.java" afterDir="false" />
+    <list default="true" id="1e412891-7976-4e17-8d0b-991fcf3de87d" name="Changes" comment="started adding friend list,collaborative tasks">
+      <change afterPath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/dto/PendingFriendRequestsResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/dto/ViewFriendsResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/com/example/apigateway/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/com/example/apigateway/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/controller/FriendController.java" beforeDir="false" afterPath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/controller/FriendController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/controller/TodoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/controller/TodoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/entity/FriendRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/entity/FriendRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/entity/Todo.java" beforeDir="false" afterPath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/entity/Todo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/repository/FriendRequestRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/repository/FriendRequestRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/repository/TodoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/repository/TodoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/service/FriendService.java" beforeDir="false" afterPath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/service/FriendService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/service/TodoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/service/TodoService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -247,7 +252,15 @@
       <option name="project" value="LOCAL" />
       <updated>1769464653128</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="started adding friend list,collaborative tasks">
+      <option name="closed" value="true" />
+      <created>1769541640635</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1769541640635</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -267,6 +280,7 @@
     <MESSAGE value="todoservice structure,create task control made" />
     <MESSAGE value="changed todos to todo in gateway yml" />
     <MESSAGE value="crud todo service working" />
-    <option name="LAST_COMMIT_MESSAGE" value="crud todo service working" />
+    <MESSAGE value="started adding friend list,collaborative tasks" />
+    <option name="LAST_COMMIT_MESSAGE" value="started adding friend list,collaborative tasks" />
   </component>
 </project>
