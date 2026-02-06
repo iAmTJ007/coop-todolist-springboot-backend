@@ -1,5 +1,6 @@
 package com.example.todoservice.controller;
 
+import com.example.todoservice.dto.AddUserToTaskRequest;
 import com.example.todoservice.dto.CreateTodoRequest;
 import com.example.todoservice.dto.DeleteTodoRequest;
 import com.example.todoservice.dto.UpdateTodoRequest;
@@ -47,6 +48,11 @@ public class TodoController {
     @PutMapping("/updateTask/{taskId}")
     public Todo updateTask(@RequestBody UpdateTodoRequest updateTodoRequest,@PathVariable Long taskId){
         return todoService.updateTask(updateTodoRequest,taskId);
+    }
+    //add user to a task
+    @PatchMapping("/addUser/{taskId}")
+    public String addUserToTask(@RequestBody AddUserToTaskRequest addUserToTaskRequest,@PathVariable Long taskId){
+        return todoService.addUserToTask(addUserToTaskRequest.getUsername(),taskId);
     }
 
 }

@@ -26,7 +26,7 @@ public class Todo {
             joinColumns = @JoinColumn(name = "taskId")
     )
     @Column(name = "username")
-    private Set<String> usernames; //we will get this from jwt
+    private Set<String> usernames;
     @Column(nullable = false)
     private String title;
     @Column(nullable = false)
@@ -34,6 +34,7 @@ public class Todo {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Status status; //pending,completed defined in enum
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Priority priority; //low,medium,high defined in enum
     @Column(nullable=false)

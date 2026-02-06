@@ -55,4 +55,12 @@ public class TodoService {
         todo.setDueDate(updateTodoRequest.getDueDate());
         return todoRepository.save(todo);
     }
+    public String addUserToTask(String username,Long taskId){
+        Todo task=todoRepository.findTodoByTaskId(taskId);
+        Set<String> usernamesOfTask=task.getUsernames();
+        usernamesOfTask.add(username);
+        task.setUsernames(usernamesOfTask);
+        todoRepository.save(task);
+        return "User added to your task";
+    }
 }
