@@ -33,6 +33,7 @@ public class SecurityConfig {
         http
                 .securityMatcher("/auth/**","/error")
                 .csrf(csrf -> csrf.disable())
+                .cors(cors->{})
                 .authorizeHttpRequests(auth -> auth.anyRequest().permitAll())
                 .sessionManagement(session ->
                         session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
@@ -47,6 +48,7 @@ public class SecurityConfig {
         http
                 .securityMatcher("/todo/**","/friends/**")
                 .csrf(csrf -> csrf.disable())
+                .cors(cors->{})
                 .authorizeHttpRequests(auth -> auth.anyRequest().authenticated())
                 .oauth2ResourceServer(oauth2 -> oauth2.jwt())
                 .sessionManagement(session ->
@@ -54,5 +56,20 @@ public class SecurityConfig {
                 );
 
         return http.build();
+    }
+    @Bean
+    public org.springframework.web.cors.CorsConfigurationSource corsConfigurationSource() {
+        org.springframework.web.cors.CorsConfiguration config = new org.springframework.web.cors.CorsConfiguration();
+
+        config.setAllowedOrigins(java.util.List.of("http://localhost:3000"));
+        config.setAllowedMethods(java.util.List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+        config.setAllowedHeaders(java.util.List.of("*"));
+        config.setAllowCredentials(true);
+
+        org.springframework.web.cors.UrlBasedCorsConfigurationSource source =
+                new org.springframework.web.cors.UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", config);
+
+        return source;
     }
 }
