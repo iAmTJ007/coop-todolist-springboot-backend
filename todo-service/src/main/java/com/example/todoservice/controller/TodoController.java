@@ -2,7 +2,6 @@ package com.example.todoservice.controller;
 
 import com.example.todoservice.dto.AddUserToTaskRequest;
 import com.example.todoservice.dto.CreateTodoRequest;
-import com.example.todoservice.dto.DeleteTodoRequest;
 import com.example.todoservice.dto.UpdateTodoRequest;
 import com.example.todoservice.entity.Todo;
 import com.example.todoservice.service.TodoService;
@@ -40,9 +39,9 @@ public class TodoController {
         return todoService.createTask(username,createTodoRequest);
     }
     //delete task
-    @DeleteMapping("/deleteTask")
-    public String deleteTask(@RequestBody DeleteTodoRequest deleteTodoRequest){
-        return todoService.deleteTask(deleteTodoRequest.getTaskId());
+    @DeleteMapping("/deleteTask/{taskId}")
+    public String deleteTask(@PathVariable Long taskId){
+        return todoService.deleteTask(taskId);
     }
     //update task
     @PutMapping("/updateTask/{taskId}")

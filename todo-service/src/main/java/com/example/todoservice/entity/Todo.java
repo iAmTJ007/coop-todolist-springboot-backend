@@ -39,5 +39,6 @@ public class Todo {
     private Priority priority; //low,medium,high defined in enum
     @Column(nullable=false)
     private LocalDate dueDate;
-
+    @Column(nullable = false)
+    private LocalDate createDate;
 }

@@ -7,6 +7,7 @@ import com.example.todoservice.entity.Todo;
 import com.example.todoservice.repository.TodoRepository;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -36,6 +37,7 @@ public class TodoService {
                 .priority(createTodoRequest.getPriority())
                 .status(Status.PENDING)
                 .dueDate(createTodoRequest.getDueDate())
+                .createDate(LocalDate.now())
                 .build();
         todoRepository.save(todo);
         return todo;

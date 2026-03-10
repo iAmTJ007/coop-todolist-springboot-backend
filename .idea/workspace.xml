@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1e412891-7976-4e17-8d0b-991fcf3de87d" name="Changes" comment="working backend v1">
+    <list default="true" id="1e412891-7976-4e17-8d0b-991fcf3de87d" name="Changes" comment="added cors in gateway">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/com/example/apigateway/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/com/example/apigateway/security/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/controller/TodoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/controller/TodoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/dto/DeleteTodoRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/entity/Todo.java" beforeDir="false" afterPath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/entity/Todo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/service/TodoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/todo-service/src/main/java/com/example/todoservice/service/TodoService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +116,7 @@
       </map>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ApiGatewayApplication">
+  <component name="RunManager" selected="Spring Boot.TodoServiceApplication">
     <configuration name="ApiGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="api-gateway" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.apigateway.ApiGatewayApplication" />
@@ -266,11 +268,30 @@
       <option name="project" value="LOCAL" />
       <updated>1770397266226</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="added cors in gateway">
+      <option name="closed" value="true" />
+      <created>1771692145576</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1771692145576</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
@@ -289,6 +310,7 @@
     <MESSAGE value="started adding friend list,collaborative tasks" />
     <MESSAGE value="friends apis working" />
     <MESSAGE value="working backend v1" />
-    <option name="LAST_COMMIT_MESSAGE" value="working backend v1" />
+    <MESSAGE value="added cors in gateway" />
+    <option name="LAST_COMMIT_MESSAGE" value="added cors in gateway" />
   </component>
 </project>
