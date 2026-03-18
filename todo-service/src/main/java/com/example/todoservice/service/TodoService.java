@@ -12,6 +12,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import static com.example.todoservice.entity.Status.PENDING;
+
 @Service
 public class TodoService {
     private final TodoRepository todoRepository;
@@ -35,7 +37,7 @@ public class TodoService {
                 .title(createTodoRequest.getTitle())
                 .description(createTodoRequest.getDescription())
                 .priority(createTodoRequest.getPriority())
-                .status(Status.PENDING)
+                .status(PENDING)
                 .dueDate(createTodoRequest.getDueDate())
                 .createDate(LocalDate.now())
                 .build();
@@ -64,5 +66,8 @@ public class TodoService {
         task.setUsernames(usernamesOfTask);
         todoRepository.save(task);
         return "User added to your task";
+    }
+    public List<Todo> getPendingTasksForUsername(String username) {
+        return todoRepository.findTodosByUsernameAndStatus(username,PENDING);
     }
 }

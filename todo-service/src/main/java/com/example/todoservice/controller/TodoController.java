@@ -53,5 +53,9 @@ public class TodoController {
     public String addUserToTask(@RequestBody AddUserToTaskRequest addUserToTaskRequest,@PathVariable Long taskId){
         return todoService.addUserToTask(addUserToTaskRequest.getUsername(),taskId);
     }
-
+    //get pending tasks for a user
+    @GetMapping("/getTasks/{username}")
+    public List<Todo> getPendingTasksForUsername(@PathVariable String username){
+        return todoService.getPendingTasksForUsername(username);
+    }
 }
